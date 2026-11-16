@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "description": "Charan Sanipinni’s AI automation and creator portfolio",
-  "scripts": { "dev": "node scripts/serve.mjs", "start": "node scripts/serve.mjs", "check": "node --check dist/script.js && node --check dist/experience.js && node scripts/check.mjs && node scripts/check-experience.mjs", "build": "node scripts/check.mjs && node scripts/check-experience.mjs" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/script.js && node --check dist/experience.js && node scripts/check.mjs && node scripts/check-experience.mjs && node scripts/check-controls.mjs",
+    "test": "node scripts/check-controls.mjs",
+    "build": "node scripts/check.mjs && node scripts/check-experience.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.1"
+  }
 }

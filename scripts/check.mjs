@@ -14,5 +14,9 @@ for (const [, asset] of js.matchAll(/image: '([^']+)'/g)) assets.add(`assets/${a
 for (const asset of assets) await access(resolve(root, asset));
 assert(html.includes('charansanipinni96@gmail.com'));
 assert(html.includes('https://wa.me/919394083525'));
-assert.equal([...html.matchAll(/data-category=/g)].length, 3, 'Expected three grounded project entries');
-console.log(`Verified ${assets.size} local resources, ${ids.length} unique IDs, section links, three projects, and contact destinations.`);
+assert.equal([...html.matchAll(/data-category=/g)].length, 5, 'Expected five supplied projects');
+for (const [, asset] of js.matchAll(/video: '([^']+)'/g)) await access(resolve(root, 'assets', asset));
+assert.equal([...html.matchAll(/https:\/\/www.instagram.com\/charan_sanipinni\//g)].length, 2);
+assert(!html.includes('instagram.com/charan__sanipinni__'));
+assert(!/Lead Desk|Inbox Assist|Grow With Charan/i.test(html));
+console.log(`Verified ${assets.size} local resources, ${ids.length} unique IDs, section links, five projects, both recordings, original workflow screenshots, and corrected Instagram destinations.`);

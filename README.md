@@ -56,3 +56,24 @@ Validation: `npm.cmd run check` and `npm.cmd run build` pass, including local re
 The existing owner-private Site remains at https://charan-sanipinni-portfolio.springybuddy2.chatgpt.site. These local refinements have not been deployed there. The requested source repository is https://github.com/charansanipinni/Charan-Personal-Portfolio. GitHub stores the complete static site and its source documentation; the local preview runs at http://127.0.0.1:4173.
 
 On Windows, use `npm.cmd run dev` if PowerShell blocks the npm.ps1 wrapper. The reviewed working project is this directory. The existing publishing checkout is `../portfolio-publish/.sites-checkout`; synchronize the final local source into it only after opening the repository through the Sites helper.
+
+
+## Media and interaction update — 16 November 2026
+
+Corrected both Instagram links. Replaced the rotation-only badge with direct two-axis dragging and a damped spring release; the strap stretches from a fixed anchor, touch dragging is supported, cancellation is handled, and reduced-motion users get a static card.
+
+The gallery now contains seven entries: two supplied automation workflows, Tatsyana’s website, Scitisense Futurize, Akbar’s portfolio, and two explicitly labeled automation concepts (Lead Desk and Inbox Assist). Added actual website hero previews, two optimized silent video walkthroughs with native controls, direct website links, richer case studies, and original client-feedback screenshots. Extra testimonial excerpts all retain Tatsyana’s attribution. No new client identities or fabricated endorsements were introduced.
+
+Validation: `npm.cmd run check` passes, covering all 43 page buttons, 21 project triggers, filters, links, contact handoffs, media controls and pause-on-close, touch and mouse direction, spring overshoot/settling, cancellation, and reduced motion. `node scripts/check-media-server.mjs` checks HTTP delivery, MIME types and MP4 byte-range seeking. Live visual review remains unavailable because the browser host is unavailable and Comet access was denied by the computer-use tool. Responsive styles have been implemented but require a final visual check in a browser.
+
+See `CONTENT_SOURCES.md` and `IMAGE_PROMPTS.md` for asset provenance and concept labels. The preview server supports WebP, MP4, HEAD and range requests. Run `npm.cmd run dev` for local preview.
+
+Deployment verified: the media and interaction update is published at https://charan-sanipinni-portfolio.springybuddy2.chatgpt.site with the existing owner-only audience. Published source commit: 996410553a8e411f3ca5edb9df71400e78c1b8ac. Native Sites deployment returned succeeded on 16 November 2026. The historical recovery section above describes the earlier deployment state. This status note was added locally after deployment.
+
+
+
+## Authentic work and focused layout — 16 November 2026
+
+Removed Lead Desk and Inbox Assist from the gallery and case studies. The five supplied projects remain, with the original Content Engine and Hidden Muses screenshots now displayed using CSS framing (source images unchanged). Simplified explanatory maps remain in their case studies. Consolidated Tatsyana’s repeated testimonial cards into one launch quote with her original feedback visible and the launch post linked. No invented speakers or endorsements. Changed all authored branding to Charan Sanipinni; historic source screenshots remain unedited. Folded the duplicate creator section into About, removed the redundant proof strip, and refined responsive spacing, hover transitions, dialog entry, and modal scroll locking with reduced-motion support.
+
+Validation for this revision: npm run check passes for all five projects, navigation, dialogs, contact controls, workflow walkthroughs, and badge motion. Local HTTP checks pass for JPEG/WebP images and both seekable MP4 recordings. Browser visual QA remains unverified: browser access host unavailable and Comet access denied.

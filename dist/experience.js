@@ -110,63 +110,66 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', updateProgress);
 updateProgress();
 
-// A light, spring-return interaction for the hanging badge. Content remains
-// readable without this enhancement, including on touch and reduced-motion devices.
+// Pointer coordinates drive translation; a damped spring animates release.
 const badge = document.querySelector('.badge-rig');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-let badgeFrame = 0;
-let badgePointer = null;
-let badgeOrigin = 0;
-let badgeAngle = 0;
-let badgeVelocity = 0;
+let badgeFrame = 0, badgePointer = null;
+let badgeX = 0, badgeY = 0, badgeVX = 0, badgeVY = 0;
+let originX = 0, originY = 0, moveTime = 0, frameTime = 0;
+const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 function paintBadge() {
-  badge.style.setProperty('--badge-angle', `${badgeAngle}deg`);
+  badge.style.setProperty('--badge-x', `${badgeX}px`);
+  badge.style.setProperty('--badge-y', `${badgeY}px`);
+  badge.style.setProperty('--badge-angle', `${clamp(-badgeX * .035, -14, 14)}deg`);
+  document.querySelector('.badge-tether path').setAttribute('d', `M 0 -320 Q ${badgeX * .3} ${-150 + badgeY * .25} ${badgeX} ${badgeY - 10}`);
 }
-function settleBadge() {
-  badgeVelocity = (badgeVelocity - badgeAngle * 0.045) * 0.88;
-  badgeAngle += badgeVelocity;
+function settleBadge(timestamp) {
+  const dt = Number.isFinite(timestamp) && frameTime ? clamp((timestamp-frameTime)/1000, .001, .032) : 1/60;
+  frameTime = timestamp;
+  for (let i=0; i<2; i++) {
+    const step = dt/2;
+    badgeVX += (-95*badgeX - 8.5*badgeVX)*step;
+    badgeVY += (-120*badgeY - 8*badgeVY)*step;
+    badgeX += badgeVX*step; badgeY += badgeVY*step;
+  }
   paintBadge();
-  if (Math.abs(badgeAngle) + Math.abs(badgeVelocity) > 0.025) {
-    badgeFrame = requestAnimationFrame(settleBadge);
+  if (Math.abs(badgeX)+Math.abs(badgeY)+Math.abs(badgeVX)+Math.abs(badgeVY)>.15) {
+    badgeFrame=requestAnimationFrame(settleBadge);
   } else {
-    badgeAngle = 0;
-    paintBadge();
-    badgeFrame = 0;
+    badgeX=badgeY=badgeVX=badgeVY=0; paintBadge(); badgeFrame=0;
   }
 }
 function releaseBadge(event) {
-  if (event.pointerId !== badgePointer) return;
-  badgePointer = null;
+  if(event.pointerId!==badgePointer) return;
+  if(event.type==='pointercancel'||event.type==='lostpointercapture'||event.timeStamp-moveTime>90) badgeVX=badgeVY=0;
+  const pointerId=badgePointer; badgePointer=null;
   badge.classList.remove('is-dragging');
-  cancelAnimationFrame(badgeFrame);
-  badgeFrame = requestAnimationFrame(settleBadge);
+  if(badge.hasPointerCapture?.(pointerId)) badge.releasePointerCapture(pointerId);
+  cancelAnimationFrame(badgeFrame); frameTime=0;
+  badgeFrame=requestAnimationFrame(settleBadge);
 }
-badge.addEventListener('pointerdown', event => {
-  if (event.button !== 0 || motionPreference.matches || !finePointer.matches) return;
-  badgePointer = event.pointerId;
-  badgeOrigin = event.clientX - badgeAngle * 8;
-  badgeVelocity = 0;
-  cancelAnimationFrame(badgeFrame);
-  badge.classList.add('is-interactive', 'is-dragging');
-  badge.setPointerCapture(event.pointerId);
-  event.preventDefault();
+badge.addEventListener('pointerdown',event=>{
+  if(event.button!==0||motionPreference.matches||badgePointer!==null) return;
+  badgePointer=event.pointerId; originX=event.clientX-badgeX; originY=event.clientY-badgeY;
+  moveTime=event.timeStamp; badgeVX=badgeVY=0;
+  cancelAnimationFrame(badgeFrame); badge.classList.add('is-dragging');
+  badge.setPointerCapture(event.pointerId); event.preventDefault();
 });
-badge.addEventListener('pointermove', event => {
-  if (event.pointerId !== badgePointer) return;
-  const nextAngle = Math.max(-18, Math.min(18, (event.clientX - badgeOrigin) / 8));
-  badgeVelocity = Math.max(-3, Math.min(3, nextAngle - badgeAngle));
-  badgeAngle = nextAngle;
-  paintBadge();
+badge.addEventListener('pointermove',event=>{
+  if(event.pointerId!==badgePointer) return;
+  const maxX=Math.min(330,Math.max(40,window.innerWidth/2-badge.offsetWidth/2-20));
+  const x=clamp(event.clientX-originX,-maxX,maxX), y=clamp(event.clientY-originY,-100,170);
+  const dt=clamp((event.timeStamp-moveTime)/1000,.008,.06);
+  badgeVX=clamp((x-badgeX)/dt,-850,850); badgeVY=clamp((y-badgeY)/dt,-850,850);
+  badgeX=x; badgeY=y; moveTime=event.timeStamp; paintBadge();
 });
-badge.addEventListener('pointerup', releaseBadge);
-badge.addEventListener('pointercancel', releaseBadge);
-badge.addEventListener('lostpointercapture', releaseBadge);
-motionPreference.addEventListener('change', () => {
+for(const type of ['pointerup','pointercancel','lostpointercapture']) badge.addEventListener(type,releaseBadge);
+motionPreference.addEventListener('change',()=>{
   cancelAnimationFrame(badgeFrame);
-  badgePointer = null;
-  badgeAngle = 0;
-  badgeVelocity = 0;
-  badge.classList.remove('is-dragging');
-  paintBadge();
+  const pointerId=badgePointer; badgePointer=null;
+  if(pointerId!==null&&badge.hasPointerCapture?.(pointerId)) badge.releasePointerCapture(pointerId);
+  badgeX=badgeY=badgeVX=badgeVY=0; badge.classList.remove('is-dragging'); paintBadge();
+});
+window.addEventListener('blur',()=>{
+  if(badgePointer!==null) releaseBadge({pointerId:badgePointer,type:'pointercancel'});
 });

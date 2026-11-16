@@ -16,7 +16,7 @@ Reference: https://plucky-listening-889962.framer.app/
 
 Retain the reference's icy blue atmosphere, oversized typography, hanging portrait badge, spacious composition, and personal character. Create an original portfolio using Charan's own identity, projects, and recommendation. Local Antonio and Inter fonts, ink-colored text, soft blue surfaces, thin rules, and a dark workflow panel form the current visual system.
 
-The desktop badge supports a restrained drag-and-spring interaction. Reduced-motion and touch users retain the readable static badge. Mobile layouts prioritize readable copy and stacked project content.
+The badge supports two-axis pointer dragging on mouse and touch, a stretching tether, and a damped bounce on release. Reduced-motion users retain a readable static badge. Mobile layouts prioritize readable copy and stacked project content.
 
 ## Grounded content
 
@@ -57,3 +57,11 @@ The inquiry form has no backend. It prepares text for a visitor-controlled hando
 ## Continuing the project
 
 Read this file, CONTENT_SOURCES.md, and README.md first. Inspect the current implementation before changing it. Use a review loop: understand the request, implement a focused improvement, check the real result, then refine observed issues. Record material changes and deployment status in README.md. Preserve the existing project rather than creating another Site.
+
+
+16 November media update: gallery expanded to seven entries, with two supplied website recordings, Tatsyana’s actual hero screenshot and feedback evidence, and two labeled AI automation concepts. Instagram corrected to charan_sanipinni. Consult the newest CONTENT_SOURCES.md and README.md sections for provenance and verification limits.
+
+
+## Authentic work and focused layout — 16 November 2026
+
+Removed Lead Desk and Inbox Assist from the gallery and case studies. The five supplied projects remain, with the original Content Engine and Hidden Muses screenshots now displayed using CSS framing (source images unchanged). Simplified explanatory maps remain in their case studies. Consolidated Tatsyana’s repeated testimonial cards into one launch quote with her original feedback visible and the launch post linked. No invented speakers or endorsements. Changed all authored branding to Charan Sanipinni; historic source screenshots remain unedited. Folded the duplicate creator section into About, removed the redundant proof strip, and refined responsive spacing, hover transitions, dialog entry, and modal scroll locking with reduced-motion support.

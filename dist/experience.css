@@ -59,3 +59,154 @@
   .faq-list summary{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){.badge-rig.is-interactive{transform:rotate(-7deg)}}
+
+/* Restrained wordmark and consistent, usable controls. */
+.brand-name{font-size:19px;font-weight:600;line-height:1.2;letter-spacing:-.045em}
+.brand-role{display:block;font-size:10px;font-weight:400;line-height:1.4;letter-spacing:.025em;margin-top:5px;color:#536b76}
+.site-header{background:#e6eff2}
+.card-top{padding-bottom:4px}
+.card-top>span:last-child{font-size:8px;line-height:1.4}
+.card-bottom{border-top:1px solid var(--line);padding-top:12px;font-size:7px}
+.photo-caption{inset:auto 0 0;padding:36px 24px 20px;background:linear-gradient(transparent,#0e1d28d9);color:#e6eff2}
+.creator-section{grid-template-columns:1fr 1fr;gap:50px}
+.service-title{gap:0}
+.filter{min-height:44px;font-size:12px}
+.round-link,.dialog-close{width:44px;height:44px}
+.project-text-link{min-height:44px;padding-block:10px}
+.project-image:focus-visible{outline-offset:5px}
+.flow-picker button{min-height:44px}
+.flow-result #flow-next{min-height:44px}
+.footer-bottom nav a{display:inline-flex;align-items:center;min-height:36px}
+@media(max-width:760px){
+  .brand-name{font-size:17px}
+  .brand-role{font-size:9px}
+  .nav-contact{margin-right:14px}
+  .menu-toggle{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px}
+  .service-row{grid-template-columns:23px 1fr 44px}
+  .creator-section{grid-template-columns:1fr;gap:20px}
+  .creator-copy{grid-column:1}
+  .footer-bottom .brand{width:100%}
+  .footer-bottom nav{font-size:12px;gap:5px 22px}
+  .flow-steps button{min-height:48px}
+  .flow-picker button{font-size:12px}
+  .button,.hero-actions .button,.hero-actions .text-link{font-size:12px}
+}
+@media(max-width:380px){
+  .brand-name{font-size:15px}
+  .brand-role{font-size:8px}
+  .nav-contact{gap:10px;margin-right:8px}
+  .hero-actions{gap:16px}
+}
+
+/* A fixed anchor and a freely moving badge keep drag directions intuitive. */
+.badge-rig{transform:none;animation:none;will-change:auto}
+.badge-body{position:relative;transform:translate(var(--badge-x,0px),var(--badge-y,0px)) rotate(calc(-7deg + var(--badge-angle,0deg)));transform-origin:50% 0;will-change:transform;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.badge-body img{pointer-events:none;-webkit-user-drag:none}
+.badge-rig.is-dragging .badge-body{cursor:grabbing}
+.badge-tether{position:absolute;left:calc(50% - 320px);top:-340px;width:640px;height:900px;max-width:none;overflow:visible;pointer-events:none}
+.badge-tether path{fill:none;stroke:#8eb1c2;stroke-width:25;stroke-linecap:round;filter:drop-shadow(4px 3px 4px #1a394324)}
+.badge-play-hint{position:absolute;right:12%;top:45%;font-size:9px;letter-spacing:.1em;color:#526e7c;z-index:2;pointer-events:none}
+.work-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;padding:23px 0;margin-bottom:35px;border-block:1px solid var(--line)}
+.work-proof span{font-size:9px;letter-spacing:.08em;font-weight:600}
+.work-proof p{font-size:12px;color:#566b75;margin-top:5px}
+.project-image{aspect-ratio:1.58}
+.project-image img{width:100%;height:100%;object-fit:contain}
+.website-project .project-image{background:#17292f;padding:20px 12px}
+.website-project .project-image img{box-shadow:0 14px 35px #0003;object-fit:contain}
+.website-project .visual-label{bottom:10px;font-size:8px}
+.concept-project .project-image{background:#1b252d}
+.project-featured .project-image{aspect-ratio:auto}
+.project-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.project-visit{display:inline-flex;align-items:center;min-height:44px;margin:20px 0 0 20px;font-size:12px;border-bottom:1px solid #869ba5}
+.project-actions .project-visit{margin-left:0}
+.recording-flag{display:block;font-size:9px;letter-spacing:.07em;color:#456674;margin-top:18px}
+.project-recording{padding:0 45px 40px}
+.project-recording figcaption{font-size:10px;color:#526b76;margin-bottom:12px;letter-spacing:.04em}
+.project-recording video{display:block;width:100%;height:auto;max-height:60vh;background:#14242c;border-radius:3px}
+.project-dialog #project-detail>img{height:auto;max-height:420px;object-fit:contain;background:#17292f}
+.client-more{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:35px}
+.client-more figure{padding:30px;border:1px solid var(--line);border-radius:3px}
+.client-more .eyebrow{color:#566f7b;font-size:9px}
+.client-more blockquote{margin:18px 0 25px;font-size:23px;letter-spacing:-.035em;line-height:1.5}
+.client-more figcaption{font-size:12px;font-weight:600}
+.client-more figcaption span{font-weight:400;color:#5d727c}
+.testimonial-context{max-width:350px}
+.testimonial-evidence{margin-top:25px;border-bottom:1px solid var(--line)}
+.testimonial-evidence summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:56px;font-size:13px;list-style:none}
+.testimonial-evidence summary::-webkit-details-marker{display:none}
+.testimonial-evidence[open] summary span{transform:rotate(180deg)}
+.evidence-images{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;padding-block:20px 30px;align-items:start}
+.evidence-images img{width:100%;height:auto;border-radius:4px}
+.evidence-images figcaption{font-size:11px;color:#526b76;margin-top:12px}
+@media(max-width:760px){
+ .badge-play-hint{right:6%;top:44%;max-width:70px;font-size:7px;line-height:1.8}
+ .badge-tether path{stroke-width:22}
+ .work-proof{grid-template-columns:1fr;gap:17px;padding-block:20px}
+ .work-proof>div{border-left:2px solid #a5bfca;padding-left:13px}
+ .project-recording{padding:0 25px 25px}
+ .client-more{grid-template-columns:1fr;gap:16px}
+ .client-more figure{padding:25px}
+ .client-more blockquote{font-size:21px}
+ .client-more figcaption span{display:block;margin-top:4px}
+ .evidence-images{grid-template-columns:1fr}
+ .evidence-images figure:first-child{max-width:430px}
+ .project-image{aspect-ratio:1.58}
+ .project-featured .project-image{aspect-ratio:1.58}
+}
+@media(prefers-reduced-motion:reduce){.badge-rig{transform:none}.badge-body{transform:rotate(-7deg);cursor:default;touch-action:auto;will-change:auto}.badge-play-hint{display:none}}
+
+/* Focused project gallery and authentic client feedback. */
+.work-section .section-intro{line-height:1.75}
+.projects{gap:44px 30px}
+.project-card{min-width:0}
+.project-image{border-radius:8px;isolation:isolate}
+.project-image .project-open{z-index:2}
+.workflow-screenshot{background:#171717}
+.project-featured .workflow-screenshot{min-height:0;aspect-ratio:1.9;align-self:center}
+.workflow-screenshot img{object-fit:contain}
+.phone-workflow{position:relative;overflow:hidden;background:#171717}
+.phone-workflow img{position:absolute;left:0;top:50%;width:100%;height:auto;max-height:none;transform:translateY(-50%);object-fit:initial}
+.project-image.phone-workflow:hover img{transform:translateY(-50%)}
+.project-detail-preview{background:#17292f;overflow:hidden;border-radius:8px 8px 0 0}
+.project-detail-preview img{width:100%;height:auto;max-height:440px;object-fit:contain;display:block}
+.project-detail-preview.phone-workflow{aspect-ratio:1.92}
+.project-detail-preview.phone-workflow img{max-height:none}
+.project-recording>img{width:100%;height:auto;border-radius:6px;margin-bottom:20px}
+.project-meta>div>p:last-child{line-height:1.75}
+.project-text-link,.project-visit{min-height:44px;margin-top:14px}
+.project-image .visual-label{display:none}
+.recording-flag{font-size:10px;letter-spacing:.04em}
+.about-social{display:flex;width:fit-content;margin-top:18px}
+.quote-card{border-radius:8px;padding:42px}
+.quote-card blockquote{font-size:clamp(24px,2.7vw,36px);line-height:1.4;margin:30px 0 35px}
+.quote-card figcaption b{font-size:13px}
+.quote-card figcaption>span>span{font-size:11px;margin-top:4px}
+.quote-source{font-size:8px;letter-spacing:.035em}
+.testimonial-context{font-size:14px;max-width:360px}
+.feedback-proof{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center;border-top:1px solid var(--line);padding-top:36px;margin-top:38px}
+.feedback-proof h3{font-size:27px;letter-spacing:-.04em;margin:12px 0}
+.feedback-proof p:not(.eyebrow){font-size:14px;line-height:1.75;color:#5e727a;max-width:340px}
+.feedback-proof .text-link{margin-top:20px}
+.feedback-image{display:block;background:#1e2528;border-radius:8px;overflow:hidden}
+.feedback-image img{width:100%;height:auto;display:block}
+.feedback-image>span{display:block;padding:14px 20px;border-top:1px solid #ffffff20;color:#c5dce5;font-size:12px}
+.project-dialog{overscroll-behavior:contain;scrollbar-width:thin}
+body:has(dialog[open]){overflow:hidden}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .project-image{transition:box-shadow .25s ease}
+ .project-image:hover{box-shadow:0 12px 28px #17313e18}
+ .project-open{transition:transform .25s ease,background .25s ease}
+ .project-image:hover .project-open{transform:translate(2px,-2px);background:#daeaf0}
+ .button,.filter{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+}
+@media(prefers-reduced-motion:no-preference){dialog[open]{animation:dialog-enter .2s ease-out} @keyframes dialog-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}
+@media(max-width:760px){
+ .projects{gap:38px}
+ .project-image.workflow-screenshot,.project-featured .workflow-screenshot{aspect-ratio:1.9}
+ .feedback-proof{grid-template-columns:1fr;gap:24px;margin-top:28px;padding-top:26px}
+ .quote-card{padding:30px 24px}
+ .quote-card blockquote{font-size:26px}
+ .quote-source{display:none}
+ .testimonial-context,.feedback-proof p:not(.eyebrow){font-size:14px}
+ .about-social{font-size:12px}
+}
