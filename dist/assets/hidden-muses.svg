@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Hidden Muses story discovery workflow</title>
+  <desc id="desc">A visual reconstruction of the supplied Hidden Muses automation: daily trigger, existing stories, exclusion list, AI discovery, digest, then email and a story log.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#c5ddea" stroke-width=".6" opacity=".07"/></pattern>
+    <radialGradient id="glow"><stop stop-color="#395b61"/><stop offset="1" stop-color="#142025"/></radialGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7" fill="none" stroke="#8faab3" stroke-width="1.4"/></marker>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-opacity=".2"/></filter>
+  </defs>
+  <rect width="1200" height="760" fill="#142025"/>
+  <ellipse cx="590" cy="380" rx="570" ry="390" fill="url(#glow)"/>
+  <rect width="1200" height="760" fill="url(#grid)"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="65" y="68" fill="#a7c2cc" font-size="15" letter-spacing="2">RESEARCH SYSTEM / 02</text>
+    <rect x="952" y="45" width="183" height="33" rx="16.5" fill="#2c454b"/>
+    <text x="1044" y="67" text-anchor="middle" fill="#b6ebdc" font-size="12" letter-spacing="1">WORKFLOW STUDY</text>
+    <text x="65" y="149" fill="#eef4f1" font-size="57" font-weight="700" letter-spacing="-2">Hidden Muses.</text>
+    <text x="67" y="191" fill="#a7bfc8" font-size="22">Find the stories worth telling. Skip the repeats.</text>
+    <g fill="none" stroke="#8faab3" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M213 355H275"/><path d="M429 355H491"/><path d="M645 355H707"/><path d="M861 355H923"/>
+      <path d="M1000 415V454Q1000 481 973 481H853Q824 481 824 508V527"/>
+      <path d="M1000 415V527"/>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="59" y="290" width="154" height="125" rx="16" fill="#23363d" stroke="#5b7881"/>
+      <rect x="275" y="290" width="154" height="125" rx="16" fill="#23363d" stroke="#5b7881"/>
+      <rect x="491" y="290" width="154" height="125" rx="16" fill="#23363d" stroke="#5b7881"/>
+      <rect x="707" y="290" width="154" height="125" rx="16" fill="#b6ebdc"/>
+      <rect x="923" y="290" width="154" height="125" rx="16" fill="#23363d" stroke="#5b7881"/>
+      <rect x="747" y="527" width="154" height="104" rx="16" fill="#23363d" stroke="#5b7881"/>
+      <rect x="923" y="527" width="154" height="104" rx="16" fill="#23363d" stroke="#5b7881"/>
+    </g>
+    <g fill="none" stroke="#c5ddea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="136" cy="332" r="16"/><path d="M136 320V332L145 337"/>
+      <rect x="337" y="317" width="30" height="30" rx="3"/><path d="M337 327H367M347 317V347"/>
+      <path d="M549 320H587L574 334V347L563 343V334Z"/>
+      <rect x="986" y="315" width="28" height="35" rx="3"/><path d="M993 325H1007M993 332H1007M993 339H1002"/>
+      <rect x="807" y="551" width="34" height="24" rx="3"/><path d="M808 552 824 565 840 552"/>
+      <ellipse cx="1000" cy="552" rx="16" ry="5"/><path d="M984 552V574C984 581 1016 581 1016 574V552M984 563C984 570 1016 570 1016 563"/>
+    </g>
+    <g fill="none" stroke="#172a2c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="783" cy="331" r="16"/><path d="M783 311V351M763 331H803M769 317 797 345M769 345 797 317"/>
+      <circle cx="783" cy="331" r="6" fill="#b6ebdc"/>
+    </g>
+    <g font-size="17" font-weight="600" text-anchor="middle">
+      <text x="136" y="386" fill="#eef4f1">Daily trigger</text><text x="352" y="386" fill="#eef4f1">Existing stories</text>
+      <text x="568" y="386" fill="#eef4f1">Exclude repeats</text><text x="784" y="386" fill="#172a2c">AI discovery</text>
+      <text x="1000" y="386" fill="#eef4f1">Build digest</text>
+      <text x="824" y="609" fill="#eef4f1">Email digest</text><text x="1000" y="609" fill="#eef4f1">Log stories</text>
+    </g>
+    <g transform="translate(66 488)">
+      <text x="0" y="31" fill="#b6ebdc" font-size="20" font-weight="600">A discovery loop, built for creators.</text>
+      <text x="0" y="68" fill="#a7bfc8" font-size="18">Scheduled research.</text>
+      <text x="0" y="97" fill="#a7bfc8" font-size="18">A curated digest. A memory of what was sent.</text>
+      <path d="M0 129H566" stroke="#42616b"/>
+    </g>
+    <text x="66" y="706" fill="#77949f" font-size="13" letter-spacing="1">ILLUSTRATED WORKFLOW</text>
+    <text x="1134" y="706" text-anchor="end" fill="#a7c2cc" font-size="14">RESEARCH → CURATE → DELIVER</text>
+  </g>
+</svg>

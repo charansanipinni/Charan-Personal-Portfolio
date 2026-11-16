@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Tatsyana travel coaching project visualization</title>
+  <desc id="desc">An illustrative website layout for a safe solo travel coaching platform. It is a project visualization, not a screenshot of the live website.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce9e4"/><stop offset="1" stop-color="#b6ccc6"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c7dcd8"/><stop offset="1" stop-color="#e5eee7"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="23" stdDeviation="24" flood-color="#244e45" flood-opacity=".18"/></filter>
+    <clipPath id="landscape"><rect x="650" y="194" width="390" height="375" rx="150"/></clipPath>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <g fill="none" stroke="#83a99d" stroke-width="1.2" opacity=".4">
+    <ellipse cx="1106" cy="150" rx="250" ry="210" transform="rotate(-28 1106 150)"/>
+    <ellipse cx="1106" cy="150" rx="280" ry="240" transform="rotate(-28 1106 150)"/>
+    <ellipse cx="1106" cy="150" rx="310" ry="270" transform="rotate(-28 1106 150)"/>
+    <ellipse cx="104" cy="705" rx="230" ry="130" transform="rotate(-28 104 705)"/>
+    <ellipse cx="104" cy="705" rx="260" ry="160" transform="rotate(-28 104 705)"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="76" y="62" width="1048" height="624" rx="15" fill="#f6f6ee" filter="url(#shadow)"/>
+    <path d="M91 62H1109Q1124 62 1124 77V105H76V77Q76 62 91 62Z" fill="#e7e9e0"/>
+    <circle cx="103" cy="84" r="4.5" fill="#9caea5"/><circle cx="120" cy="84" r="4.5" fill="#bdc9bf"/><circle cx="137" cy="84" r="4.5" fill="#bdc9bf"/>
+    <rect x="418" y="73" width="364" height="23" rx="7" fill="#f2f3ed"/>
+    <text x="600" y="89" text-anchor="middle" fill="#678174" font-size="11" letter-spacing="1">TATSYANA · TRAVEL &amp; SAFETY</text>
+    <text x="128" y="155" fill="#173f34" font-size="24" font-weight="700" letter-spacing="2">TATSYANA</text>
+    <text x="774" y="153" fill="#496559" font-size="13">The story</text><text x="880" y="153" fill="#496559" font-size="13">Travel guide</text>
+    <rect x="990" y="132" width="84" height="33" rx="16.5" fill="#173f34"/>
+    <text x="1032" y="153" text-anchor="middle" fill="#f5f6ee" font-size="12">Let’s talk</text>
+    <text x="129" y="234" fill="#6b8378" font-size="12" letter-spacing="2.4">YOUR NEXT CHAPTER STARTS HERE</text>
+    <text x="123" y="311" fill="#173f34" font-size="67" font-family="Georgia,'Times New Roman',serif" letter-spacing="-2">Go far.</text>
+    <text x="123" y="386" fill="#173f34" font-size="67" font-family="Georgia,'Times New Roman',serif" letter-spacing="-2">Feel prepared.</text>
+    <text x="128" y="433" fill="#60756b" font-size="17">A thoughtful approach to solo travel,</text>
+    <text x="128" y="461" fill="#60756b" font-size="17">confidence, and personal safety.</text>
+    <rect x="128" y="493" width="218" height="48" rx="24" fill="#173f34"/>
+    <text x="157" y="523" fill="#f5f6ee" font-size="14">Explore the free guide</text>
+    <path d="M311 511 319 517 311 523M305 517H319" fill="none" stroke="#e1eade" stroke-width="1.7"/>
+    <g clip-path="url(#landscape)">
+      <rect x="650" y="194" width="390" height="375" fill="url(#sky)"/>
+      <circle cx="926" cy="278" r="43" fill="#f5e4ab"/>
+      <path d="M615 451 745 315 815 402 895 326 1090 484V600H615Z" fill="#8bad9f"/>
+      <path d="M615 524 760 394 850 476 957 367 1100 498V610H615Z" fill="#527e6c"/>
+      <path d="M615 600 724 480 817 532 917 440 1070 533V620Z" fill="#214d3d"/>
+      <path d="M801 578C950 518 808 480 878 436S957 376 947 354" fill="none" stroke="#e3d6ad" stroke-width="6"/>
+      <circle cx="947" cy="354" r="8" fill="#f2eee0"/><circle cx="947" cy="354" r="3" fill="#214d3d"/>
+    </g>
+    <g transform="rotate(-7 979 523)">
+      <rect x="913" y="481" width="130" height="83" rx="7" fill="#e8eedf" stroke="#97ad9e"/>
+      <circle cx="936" cy="508" r="10" fill="none" stroke="#3c6a55" stroke-width="1.5"/>
+      <path d="M930 508 935 512 942 502" fill="none" stroke="#3c6a55" stroke-width="1.5"/>
+      <text x="925" y="542" fill="#335b48" font-size="11" letter-spacing="1">TRAVEL WITH CARE</text>
+    </g>
+    <path d="M128 595H1072" stroke="#d7e0d4"/>
+    <text x="129" y="626" fill="#36594a" font-size="12" letter-spacing="1.4">SOLO TRAVEL</text>
+    <text x="437" y="626" fill="#36594a" font-size="12" letter-spacing="1.4">A FREE TRAVEL GUIDE</text>
+    <text x="796" y="626" fill="#36594a" font-size="12" letter-spacing="1.4">DISCOVERY CALLS</text>
+    <text x="129" y="650" fill="#819085" font-size="12">Explore with intention.</text>
+    <text x="437" y="650" fill="#819085" font-size="12">Start with the essentials.</text>
+    <text x="796" y="650" fill="#819085" font-size="12">Find your next step.</text>
+    <text x="600" y="728" text-anchor="middle" fill="#426556" font-size="12" letter-spacing="2">PROJECT VISUALIZATION · WEBSITE COLLABORATION</text>
+  </g>
+</svg>

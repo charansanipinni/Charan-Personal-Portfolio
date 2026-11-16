@@ -1,0 +1,18 @@
+import { readFile, access } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import assert from 'node:assert/strict';
+const root = resolve('dist');
+const html = await readFile(resolve(root, 'index.html'), 'utf8');
+const css = await readFile(resolve(root, 'styles.css'), 'utf8');
+const js = await readFile(resolve(root, 'script.js'), 'utf8');
+const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+assert.equal(new Set(ids).size, ids.length, 'HTML IDs must be unique');
+for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(target), `Missing anchor: ${target}`);
+const assets = new Set([...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(match => match[1]).filter(path => !/^(?:https?:|mailto:|tel:)/.test(path)));
+for (const [, asset] of css.matchAll(/url\('([^']+)'\)/g)) assets.add(asset);
+for (const [, asset] of js.matchAll(/image: '([^']+)'/g)) assets.add(`assets/${asset}`);
+for (const asset of assets) await access(resolve(root, asset));
+assert(html.includes('charansanipinni96@gmail.com'));
+assert(html.includes('https://wa.me/919394083525'));
+assert.equal([...html.matchAll(/data-category=/g)].length, 3, 'Expected three grounded project entries');
+console.log(`Verified ${assets.size} local resources, ${ids.length} unique IDs, section links, three projects, and contact destinations.`);
